@@ -1,5 +1,6 @@
 import React, { Fragment } from 'react';
 import { TodoList } from './components/TodoList';
+import './index.css';
 
 export function App(){
     return (
@@ -8,8 +9,7 @@ export function App(){
             <div className='container mt-3'>
                 <TodoList />
             </div>
-        </Fragment>
-      
 
+        </Fragment>
     );
 }
