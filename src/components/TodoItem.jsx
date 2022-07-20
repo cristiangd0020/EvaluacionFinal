@@ -1,15 +1,16 @@
-import React, { Fragment } from 'react';
+import React from 'react';
 
 
 export function TodoItem({todo}){
-    const {id, task, desref} = todo;
+    const { task, desc} = todo;
 
     return (
-        <div>
-            <a href="">
-                 <li className="">
-                    <h2>{task}{desref}</h2>
-                    
+        <div className='m-3'>
+            <a>
+            <button className="bi bi-x-lg"></button>
+                 <li >
+                    <h2>{task}</h2>
+                    <p>{desc}</p>
                 </li>
             </a>
         </div>

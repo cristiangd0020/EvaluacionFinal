@@ -21,9 +21,10 @@ export function TodoList() {
     }, [todos])
 
     const agregarNota = () => {
-        console.log("Estoy agregando una Nota");
         const task = taskRef.current.value;
         const desc = desref.current.value;
+
+
         console.log(task)
         console.log(desc)
         const id = uuid();
@@ -33,12 +34,14 @@ export function TodoList() {
             const newTask = {
                 id: id,
                 task: task,
-                desc: desc,
+                desc: desc
             }
             return[...prevTodos, newTask]
         })
         taskRef.current.value = null;
         desref.current.value = null;
+
+
     }
 
     return (
@@ -53,13 +56,15 @@ export function TodoList() {
             </label>
             <button className="m-3 btn btn-dark" onClick={agregarNota} type="button">Agregar</button>
         </div>
+        <div>
             <ul>
-                <li className="container">
+                <li className="m-3">
                     <h6>{todos.map((todo) => (
-                        <TodoItem todo={todo} key={todo.id}/>
+                        <TodoItem todo={todo} key={todo.id} />
                     ))}</h6>
                 </li>
-            </ul>               
+            </ul>
+            </div>              
         </Fragment>
     )
 }
